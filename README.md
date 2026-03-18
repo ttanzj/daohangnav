@@ -93,15 +93,15 @@
 
 1、右上角点击 `Fork` 当前项目。
 
-2、[https://github.com/settings/tokens/new](https://github.com/settings/tokens/new) 申请 `token`, 勾选相应的权限, 如果不懂就全部选中，复制并保存 Token；[Gitee 申请点这里](https://gitee.com/profile/personal_access_tokens/new)
+2、[https://github.com/settings/tokens/new](https://github.com/settings/tokens/new) 申请 `token`, 勾选读写权限, 复制并保存 Token。
 
-3、https://github.com/你的用户名/nav/settings/secrets/actions/new 添加申请的 token， name 填写 `TOKEN` 大写。
+3、打开 https://github.com/你的用户名/nav/actions 检查是否已开启 action 自动部署
 
-4、打开 https://github.com/你的用户名/nav/actions 开启 action 自动部署
+4、修改项目根目录配置文件 [nav.config.yaml](nav.config.yaml) 只需要修改仓库地址 `gitRepoUrl` 字段
 
-5、修改项目根目录配置文件 [nav.config.yaml](nav.config.yaml) 只需要修改仓库地址 `gitRepoUrl` 字段
+5、打开 https://你的用户名.github.io/nav 就能看到一个非常强大的导航网站了。
 
-6、打开 https://你的用户名.github.io/nav 就能看到一个非常强大的导航网站了。
+如果打开 404，请打开 https://github.com/你的用户名/nav/settings/pages 检查分支是否是 **gh-pages**。
 
 #### Netlify 推荐(免费)
 
@@ -124,26 +124,18 @@
 | --------------------------------------------- | -------- |--- |--- |
 |√ | | gitRepoUrl | 填写您的仓库地址 |
 |√ | | branch | 部署分支 |
+|√ | | imageRepoUrl | 图片仓库, 默认主仓库 `https://github.com/xjh22222228/image?branch=main` |
 |√ | √| hashMode | 路由是否 Hash 模式, 如果是部署在 `github pages` 务必设为 true |
+|√ | √| email | 用户提交收录通知 |
 | | √| password | 自有部署登录密码，`Fork` 用户无需填写 |
 | | √| address | 自有部署, 一旦填写认为你是自有部署 |
-|√| √| email | 用户提交收录通知 |
 | | √| mailConfig | 自有部署，用户收录通知邮箱配置 |
-|√ | | imageRepoUrl | 图片仓库, 默认主仓库 `https://github.com/xjh22222228/image?branch=main` |
 
 ## 后台
 
 将路由地址修改为 `system` 即可进入，如: https://www.nav3.cn 修改为 https://www.nav3.cn/system
 
 ## 升级
-
-#### 自动
-
-仅限于 `Fork` 用户
-
-[点这里安装 Pull](https://github.com/apps/pull) ， 只要有升级会自动给你的仓库提交 `Pull Requests` 点击合并即可。
-
-#### 手动
 
 将你的仓库克隆下来执行以下命令
 
